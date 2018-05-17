@@ -1,39 +1,46 @@
 <template>
   <div id="app">
-    <fork-link :repo="repo" />
+    <!-- <fork-link :repo="repo" /> -->
     <header>
       <img src="./assets/logo.png">
-      <HelloWorld />
     </header>
     <main>
-      <readme></readme>
-      <Doc/>
+      <div style="min-height: 150px;">
+        <m-ace-editor height="200" v-model="content" mode="markdown" theme="chrome"></m-ace-editor>
+      </div>
+      
+      <!-- <readme></readme> -->
+      <!-- <Doc/> -->
     </main>
     <layout-footer></layout-footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from '@/index'
+
 import LayoutFooter from './components/footer'
 import ForkLink from './components/fork-link'
 
-import Doc from './doc.md'
-import Readme from '~/README.md'
+// import Doc from './doc.md'
+// import Readme from '~/README.md'
 import pkg from '~/package.json'
+import 'brace'
+import 'brace/mode/markdown'
+import 'brace/theme/clouds_midnight'
+import 'brace/theme/chrome'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    Doc,
+    // Doc,
     LayoutFooter,
     ForkLink,
-    Readme
+    // Readme
   },
   data () {
     return {
-      pkg
+      pkg,
+      content: 'wellcome \n'
     }
   },
   computed: {

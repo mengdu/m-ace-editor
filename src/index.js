@@ -1,9 +1,10 @@
-import HelloWorld from './HelloWorld'
+import MAceEditor from './ace-editor'
 
-// export default {
-//   name: 'HelloWorld',
-//   title: 'this is a test.'
-// }
-HelloWorld.install = function (Vue) {}
+MAceEditor.install = function (Vue) {
+  Vue.component(MAceEditor.name, MAceEditor)
+}
 
-export default HelloWorld
+export {
+  MAceEditor as default,
+  MAceEditor
+}

@@ -45,7 +45,8 @@ module.exports = {
   pack: {
     // library: 'jQuery',
     libraryTarget: 'umd',
-    libraryExport: 'default',
+    // 导出指定模块，空表示暴露module.exports
+    libraryExport: '',
     umdNamedDefine: true,
     // Template for index.html
     // index: path.resolve(__dirname, '../dist/index.html'),
