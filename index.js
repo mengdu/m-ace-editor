@@ -1,6 +1,6 @@
-import {XCompoent} from './dist/index'
+import {MAceEditor} from './dist/index'
 
 export {
-  XComnent as default,
-  XComnent
+  MAceEditor as default,
+  MAceEditor
 }
