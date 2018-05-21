@@ -1,15 +1,17 @@
 <template>
   <div id="app">
-    <!-- <fork-link :repo="repo" /> -->
+    <fork-link :repo="repo" />
     <header>
       <img src="./assets/logo.png">
+      <h1>{{pkg.name}}</h1>
+      <p>{{pkg.description}}</p>
     </header>
-    <main>
+    <main class="doc-block">
       <div style="min-height: 150px;">
-        <m-ace-editor height="200" v-model="content" mode="markdown" theme="chrome"></m-ace-editor>
+        <m-ace-editor height="250px" v-model="content" :line-number="false" mode="javascript" theme="chrome"></m-ace-editor>
       </div>
       
-      <!-- <readme></readme> -->
+      <readme></readme>
       <!-- <Doc/> -->
     </main>
     <layout-footer></layout-footer>
@@ -22,10 +24,11 @@ import LayoutFooter from './components/footer'
 import ForkLink from './components/fork-link'
 
 // import Doc from './doc.md'
-// import Readme from '~/README.md'
+import Readme from '~/README.md'
 import pkg from '~/package.json'
 import 'brace'
 import 'brace/mode/markdown'
+import 'brace/mode/javascript'
 import 'brace/theme/clouds_midnight'
 import 'brace/theme/chrome'
 
@@ -35,12 +38,13 @@ export default {
     // Doc,
     LayoutFooter,
     ForkLink,
-    // Readme
+    Readme
   },
   data () {
     return {
       pkg,
-      content: 'wellcome \n'
+      // content: 'wellcome \n',
+      content: ''
     }
   },
   computed: {
@@ -91,14 +95,50 @@ export default {
     background: #FAFAFA;
   }
   code {
-    color: #ED4C6B;
-    background-color: #F6F8FA;
-    margin: 0 4px;
-    display: inline-block;
-    padding: 1px 5px;
-    font-size: 12px;
+    color: #bc3dda;
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(27,31,35,0.05);
     border-radius: 3px;
-    line-height: 18px;
     font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+  }
+
+  .doc-block table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+    font-size: 14px;
+    margin-bottom: 45px;
+    line-height: 1.5em;
+    text-align: left;
+  }
+  .doc-block table td,
+  .doc-block table th
+  {
+    border-bottom: 1px solid #d8d8d8;
+    padding: 15px;
+    max-width: 250px;
+  }
+
+  .doc-block p{
+    margin-bottom: 16px;
+  }
+  .doc-block h1,
+  .doc-block h2,
+  .doc-block h3,
+  .doc-block h4,
+  .doc-block h5,
+  .doc-block h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+  .doc-block pre{
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+    border-radius: 3px;
   }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <pre class="m-ace-editor"
     :style="{
-      width: width + 'px',
-      height: height + 'px',
+      width: /px|\%|rem/.test(width) ? width : width + 'px',
+      height: /px|\%|rem/.test(height) ? height : height + 'px',
       lineHeight: lineHeight
     }"
     ></pre>
@@ -96,7 +96,6 @@ export default {
   },
   mounted () {
     this.editor = AceEditor.edit(this.$el)
-    window.editor = this.editor
     this.editor.setShowPrintMargin(false)
     this.setValue()
     this.setFontSize()
@@ -105,6 +104,7 @@ export default {
     this.listening()
     this.setMode()
     this.setTheme()
+    this.$on('init', this.editor)
   }
 }
 </script>

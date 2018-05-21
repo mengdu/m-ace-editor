@@ -7790,10 +7790,6 @@ vue-m-button@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/vue-m-button/-/vue-m-button-1.0.0.tgz#f0594de9ef6e252e880a088f64c4a3cee9ba6f1d"
 
-vue-m-form@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/vue-m-form/-/vue-m-form-1.0.0.tgz#cc53d9e5086ba48eebb5000384e8aae51c518177"
-
 vue-markdown-loader@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/vue-markdown-loader/-/vue-markdown-loader-2.4.1.tgz#324e730e21cfe2ab37f415ff7eaf4ca36696165f"

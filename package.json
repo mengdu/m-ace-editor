@@ -1,18 +1,18 @@
 {
-  "name": "vue-component-devtool",
+  "name": "vue-m-ace-editor",
   "version": "1.0.0",
-  "description": "A Vue.js component devtool",
+  "description": "An ace editor component for vue.",
   "author": "lanyueos@qq.com",
   "license": "MIT",
   "main": "./index.js",
   "repository": {
     "type": "https",
-    "url": "git+https://github.com/mengdu/vue-component-devtool"
+    "url": "git+https://github.com/mengdu/m-ace-editor"
   },
   "bugs": {
-    "url": "https://github.com/mengdu/vue-component-devtool/issues"
+    "url": "https://github.com/mengdu/m-ace-editor/issues"
   },
-  "homepage": "https://mengdu.github.io/vue-component-devtool/example/",
+  "homepage": "https://mengdu.github.io/m-ace-editor/example/",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",

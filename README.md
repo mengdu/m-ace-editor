@@ -1,69 +1,66 @@
-# vue-component-devtool
+# m-ace-editor
 
-> 基于 webpack 打造的 Vue 组件开发工具。可以编写例子，文档。
-> 基于vue init webpack 模板修改，参照了 [element-ui](https://github.com/ElemeFE/element) 的实现。
+Vue [ace](https://ace.c9.io) 编辑器组件。
 
+npm
 
-[Example](https://mengdu.github.io/m-button/example/)
+```ls
+npm install -S vue-m-ace-editor
+```
 
+use
 
-**功能**
+```ls
+import MAceEditor from 'vue-m-ace-editor'
 
-+ 打包vue组件，导出 `umd` 模式
-+ 支持 `markdown` 解析
-+ `markdwon` 可以编写编写vue例子
-
-> 目前仅支持单组件打包导出
-
-
-**目录**：
+Vue.use(MAceEditor) // 注册 m-ace-editor 组件
+```
 
 ```html
-├─build
-├─config
-├─dist
-│  ├─index.js
-│  └─css
-├─src 组件源码，以 `index.js` 导出组件
-├─docs 文档及在线列子源码
-├─example 生成的文档及在线例子
-
+<m-ace-editor height="250px" v-model="content" :line-number="false"></m-ace-editor>
 ```
 
 
-可以在 `docs` 的文件里 `import MyComponent from '@/index'` 载入你的组件。
+如果你要设置其他的主题和模式，你需要导入ace支持的，主题和模式
 
 
+```js
+import 'brace'
+import 'brace/mode/markdown'
+import 'brace/mode/javascript'
+import 'brace/theme/clouds_midnight'
 
-**开发模式**（支持热更新）
-
-```ls
-npm run dev
 ```
 
-打开 `http://localhost:8080` 查看效果。
-
-
-
-**打包组件**
-
-```ls
-npm run build
+```html
+<m-ace-editor height="250px" v-model="content" :line-number="false" mode="javascript" theme="chrome"></m-ace-editor>
 ```
 
-打包后组件被打包成js和css在 `dist` 文件夹中。
+## MAceEditor Attributes
 
-**生成文档**
+| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+|---------- |-------- |---------- |-------------  |-------- |
+| width     |   宽度  | string/number |  —  |    —     |
+| height     |   高度  | string/number |  —  |    —     |
+| line-height     |   内容行高  | string/number |  —  |    —     |
+| value     |   内容  | string |  —  |    —     |
+| font-size     |   字体大小  | string |  —  |    14px     |
+| line-number     |   是否显示行号  | boolean |  —  |    true     |
+| highlight-active-line     |   高亮当前行  | boolean |  —  |    true     |
+| mode     |   模式  | string |  —  |   markdown    |
+| theme     |   主题  | string |  —  |   —    |
 
-```ls
-npm run docs
-```
 
-生成文档在 `example` 文件夹，打开 `index.html` 可可以浏览。上传Github后可以在Github 开启项目Page访问。
+## MAceEditor Events
 
+| 事件      | 说明    | 参数      |
+|---------- |-------- |---------- |
+| change     |   内容改变  | value|
+| blur     |   失去焦点  | editor|
+| focus     |   获取焦点  | editor|
+| init     |   初始化  | editor|
 
-## Other
+**更多设置**
 
-[element-ui](https://github.com/ElemeFE/element)
+[ACE API](https://ace.c9.io/#nav=api)
 
-[vue-markdown-loader](https://github.com/QingWei-Li/vue-markdown-loader)
