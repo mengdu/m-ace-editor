@@ -2,6 +2,8 @@
 
 Vue [ace](https://ace.c9.io) 编辑器组件。
 
+[Example](https://mengdu.github.io/m-ace-editor/example/)
+
 npm
 
 ```ls
